@@ -8,7 +8,7 @@ import {
 } from './actionTypes'
 import { setMessage } from '../actions/message'
 
-let userII = '';
+let userId = '';
 const authBaseURL = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty'
 const API_KEY = 'AIzaSyDd0v8KMpIzxC7muvjUArRwjn1_psLcnNI'
 
@@ -36,7 +36,7 @@ export const createUser = user => {
             .catch(err => {
                 dispatch(setMessage({
                     title: 'Erro',
-                    text: 'Erro na manifestação'
+                    text: 'Preencha tudo corretamente'
                 }))
             })
             .then(res => {
@@ -48,7 +48,7 @@ export const createUser = user => {
                         .catch(err => {
                             dispatch(setMessage({
                                 title: 'Erro',
-                                text: 'Erro na manifestação'
+                                text: 'tente outro email'
                             }))
                         })
                         .then(() => {
@@ -90,8 +90,7 @@ export const login = user => {
             })
             .then(res => {
                 if (res.data.localId) {
-                    userII = res.data.localId
-                    console.log(userII)
+                    userId = res.data.localId
                     axios.get(`/users/${res.data.localId}.json`)
                         .catch(err => {
                             dispatch(setMessage({
@@ -111,4 +110,4 @@ export const login = user => {
     }
 }
 
-export {userII}
+export { userId }

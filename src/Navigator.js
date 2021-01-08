@@ -14,16 +14,16 @@ import Register from './screens/Register'
 import Splash from './screens/Splash'
 
 const authRouter = createStackNavigator({
-    Login: {screen: Login, navigationOptions: {title: 'Login'}},
-    Register: {screen: Register, navigationOptions: {title: 'Criar Conta'}}
-},{
+    Login: { screen: Login, navigationOptions: { title: 'Login' } },
+    Register: { screen: Register, navigationOptions: { title: 'Criar Conta' } }
+}, {
     initialRouteName: 'Login'
 })
 
 const loginOrProfileRouter = createSwitchNavigator({
     Profile: Profile,
     Auth: authRouter
-},{
+}, {
     initialRouteName: 'Auth'
 })
 
@@ -69,7 +69,7 @@ const MenuNavigation = createBottomTabNavigator(MenuRoutes, MenuConfig)
 const SplashRouter = createSwitchNavigator({
     Splash: Splash,
     App: MenuNavigation
-},{
+}, {
     initialRouteName: 'Splash'
 })
 

@@ -21,17 +21,14 @@ class Profile extends Component {
         return (
             <View style={styles.container} >
                 <Header />
-            
-                
-                    <Text style={styles.text}>Usuário: {this.props.name}</Text>
-                    <Text style={styles.text}>Email: {this.props.email}</Text>
-                    <Text style={styles.text}>CPF: {this.props.cpf}</Text>
 
-                
+                <Text style={styles.text}>Usuário: {this.props.name}</Text>
+                <Text style={styles.text}>Email: {this.props.email}</Text>
+                <Text style={styles.text}>CPF: {this.props.cpf}</Text>
+
                 <TouchableOpacity onPress={this.logout} style={styles.button}>
                     <Text style={styles.buttonText}>Sair</Text>
                 </TouchableOpacity>
-            
 
             </View >
         )

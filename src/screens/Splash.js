@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {
     View,
     Text,
@@ -10,17 +10,17 @@ import {
 export default class Splash extends Component {
     componentDidMount = () => {
         setTimeout(
-            () => {this.props.navigation.navigate('App')},
+            () => { this.props.navigation.navigate('App') },
             1500
         )
     }
 
-    render(){
+    render() {
         return (
             <View style={styles.container}>
                 <Image source={require('../../assets/imgs/logo.jpg')}
                     style={styles.image} />
-                    <Text style={styles.header}>Desafio Simplifique</Text>
+                <Text style={styles.header}>Desafio Simplifique</Text>
             </View>
         )
     }

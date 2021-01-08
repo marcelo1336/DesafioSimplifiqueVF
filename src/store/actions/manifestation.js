@@ -5,13 +5,13 @@ import {
 } from './actionTypes'
 import axios from 'axios'
 import { setMessage } from './message'
-import {userII} from './user'
+import { userId } from './user'
 
 export const addManifestation = manifestation => {
 
     return dispatch => {
         dispatch(creatingManifestation())
-        axios.post(`manifestations/${userII}.json`, { ...manifestation })
+        axios.post(`manifestations.json`, { ...manifestation })
             .catch(err => {
                 dispatch(setMessage({
                     title: 'Erro',
@@ -34,7 +34,7 @@ export default setManifestations = manifestations => {
 
 export const fetchManifestations = () => {
     return dispatch => {
-        axios.get(`manifestations/${userII}.json`)
+        axios.get(`manifestations.json`)
             .catch(err => {
                 dispatch(setMessage({
                     title: 'Erro',
@@ -42,7 +42,6 @@ export const fetchManifestations = () => {
                 }))
             })
             .then(res => {
-                console.log('aqui',userII)
                 const rawManifestations = res.data
                 const manifestations = []
                 for (let key in rawManifestations) {
@@ -55,8 +54,6 @@ export const fetchManifestations = () => {
             })
     }
 }
-
-
 
 export const creatingManifestation = () => {
     return {

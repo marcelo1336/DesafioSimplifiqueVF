@@ -20,7 +20,6 @@ const noCorrect = 'Preencha tudo corretamente'
 
 class AddManifestation extends Component {
     state = {
-        editMode: false,
         typeM: '',
         receiverM: '',
         subjectM: '',
@@ -56,6 +55,7 @@ class AddManifestation extends Component {
             Alert.alert(noCorrect)
             return
         }
+
         this.props.onAddManifestation({
             id: Math.random(),
             typeM: this.state.typeM,
@@ -68,6 +68,7 @@ class AddManifestation extends Component {
         })
     }
 
+
     render() {
         return (
             <ScrollView>
@@ -75,7 +76,7 @@ class AddManifestation extends Component {
                 <View style={styles.container}>
 
                     <View style={styles.infUser}>
-                        <View style={{alignItems: 'center'}}>
+                        <View style={{ alignItems: 'center' }}>
                             <Text style={styles.infTextTitle}> Suas informações</Text>
                         </View>
                         <Text style={styles.infUserText}> Email:  {this.props.email}</Text>

@@ -1,4 +1,4 @@
-import { SET_MESSAGE} from './actionTypes'
+import { SET_MESSAGE } from './actionTypes'
 
 export const setMessage = message => {
     return {

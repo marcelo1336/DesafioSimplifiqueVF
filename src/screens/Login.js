@@ -18,13 +18,13 @@ class Login extends Component {
     }
 
     componentDidUpdate = prevProvs => {
-        if (prevProvs.isLoading && !this.props.isLoading){
+        if (prevProvs.isLoading && !this.props.isLoading) {
             this.props.navigation.navigate('Profile')
         }
     }
 
     login = () => {
-        this.props.onLogin({...this.state})
+        this.props.onLogin({ ...this.state })
     }
 
     render() {
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     }
 })
 
-const mapStateToProps = ({user}) => {
+const mapStateToProps = ({ user }) => {
     return {
         isLoading: user.isLoading
     }
@@ -96,5 +96,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
-
-

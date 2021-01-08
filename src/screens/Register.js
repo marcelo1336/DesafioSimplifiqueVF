@@ -11,6 +11,7 @@ import { createUser } from '../store/actions/user'
 
 class Register extends Component {
 
+
     state = {
         name: '',
         cpf: '',
@@ -19,7 +20,7 @@ class Register extends Component {
     }
 
     componentDidUpdate = prevProvs => {
-        if (prevProvs.isLoading && !this.props.isLoading){
+        if (prevProvs.isLoading && !this.props.isLoading) {
             this.props.navigation.navigate('Profile')
         }
     }
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
     }
 })
 
-const mapStateToProps = ({user}) => {
+const mapStateToProps = ({ user }) => {
     return {
         isLoading: user.isLoading
     }
