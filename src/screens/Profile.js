@@ -3,8 +3,7 @@ import {
     Text,
     View,
     StyleSheet,
-    TouchableOpacity,
-    ScrollView
+    TouchableOpacity
 } from 'react-native'
 
 import { connect } from 'react-redux'
@@ -20,9 +19,9 @@ class Profile extends Component {
     render() {
         const options = { email: this.props.email, secure: true }
         return (
-            <ScrollView>
+            <View style={styles.container} >
                 <Header />
-            <View style={styles.container}>
+            
                 
                     <Text style={styles.text}>Usuário: {this.props.name}</Text>
                     <Text style={styles.text}>Email: {this.props.email}</Text>
@@ -32,9 +31,9 @@ class Profile extends Component {
                 <TouchableOpacity onPress={this.logout} style={styles.button}>
                     <Text style={styles.buttonText}>Sair</Text>
                 </TouchableOpacity>
-            </View>
+            
 
-            </ScrollView>
+            </View >
         )
     }
 }
@@ -42,9 +41,8 @@ class Profile extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
         backgroundColor: '#c0e6ec',
-        justifyContent: 'center'
+        alignItems: 'center'
     },
     text: {
         marginTop: 20,

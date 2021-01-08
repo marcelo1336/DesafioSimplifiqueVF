@@ -43,10 +43,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     image: {
-        height: 30,
-        width: 30,
+        height: 50,
+        width: 50,
         resizeMode: 'contain',
-        margin: 10
+        borderRadius: 10
     },
     info: {
         paddingLeft: 20

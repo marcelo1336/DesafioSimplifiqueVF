@@ -31,12 +31,14 @@ const styles = StyleSheet.create({
         flex: 1,
         alignContent: 'center',
         justifyContent: 'center',
-        backgroundColor: '#88cfdc'
+        backgroundColor: '#88cfdc',
     },
     image: {
         height: 400,
         width: Dimensions.get('window').width,
-        resizeMode: 'contain'
+        resizeMode: 'contain',
+        borderRadius: 10,
+        paddingHorizontal: 10
     },
     header: {
         fontSize: 45,

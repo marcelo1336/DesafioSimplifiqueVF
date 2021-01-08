@@ -74,6 +74,15 @@ class AddManifestation extends Component {
                 <Header />
                 <View style={styles.container}>
 
+                    <View style={styles.infUser}>
+                        <View style={{alignItems: 'center'}}>
+                            <Text style={styles.infTextTitle}> Suas informações</Text>
+                        </View>
+                        <Text style={styles.infUserText}> Email:  {this.props.email}</Text>
+                        <Text style={styles.infUserText}> Nome:  {this.props.name}</Text>
+                        <Text style={styles.infUserText}> CPF:  {this.props.cpf}</Text>
+                    </View>
+
                     <View style={styles.titleView}>
                         <Text style={styles.title}>Adicione uma manifestação</Text>
                     </View>
@@ -374,6 +383,20 @@ const styles = StyleSheet.create({
     },
     inputText: {
         fontSize: 15
+    },
+    infUser: {
+        backgroundColor: '#88bac3',
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10,
+        marginBottom: 20,
+    },
+    infTextTitle: {
+        fontWeight: 'bold',
+        fontSize: 20,
+    },
+    infUserText: {
+        fontSize: 18
     }
 })
 
@@ -381,6 +404,7 @@ const mapStateToProps = ({ user, manifestations }) => {
     return {
         email: user.email,
         name: user.name,
+        cpf: user.cpf,
         loading: manifestations.isUploading
     }
 }
